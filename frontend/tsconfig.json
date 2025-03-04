@@ -1,0 +1,50 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        /* Language and Environment */
+        "target": "ES2022", // Set JavaScript language version
+        "lib": ["DOM", "DOM.Iterable", "ES2022"], // Specify library files to include
+        "jsx": "react-jsx", // Specify JSX code generation
+        "moduleDetection": "auto", // Control module detection method
+
+        /* Modules */
+        "module": "ESNext", // Specify module code generation
+        "rootDir": ".", // Specify root folder for source files
+        "moduleResolution": "Bundler", // Specify module resolution strategy
+        "baseUrl": ".", // Base directory for non-relative module names
+        "resolveJsonModule": true, // Enable importing .json files
+
+        /* JavaScript Support */
+        "allowJs": true, // Allow JavaScript files in the project
+
+        /* Emit */
+        "declaration": false, // Generate .d.ts files
+        "disableSizeLimit": false, // Disable size limit for incremental compilation
+        "sourceMap": true, // Generate source map files
+        "outDir": "dist", // Specify output folder for all emitted files
+        "noEmit": false, // Do not emit output (Vite handles building)
+
+        /* Interop Constraints */
+        "verbatimModuleSyntax": true, // Do not transform imports/exports, enforced 'type-only' imports
+        "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+        "esModuleInterop": true, // Emit additional JavaScript for CommonJS modules
+        "forceConsistentCasingInFileNames": true, // Ensure correct casing in imports
+
+        /* Type Checking */
+        "strict": true, // Enable all strict type-checking options
+        "noImplicitAny": true, // Raise error on expressions and declarations with implied 'any' type
+        "noUncheckedIndexedAccess": true, // Include 'undefined' in index signature results, make indexing stricter
+
+        /* Completeness */
+        "skipLibCheck": false, // Skip type checking of all declaration files
+
+        // Absolute paths that re-map imports to additional lookup locations.
+        "paths": {
+            "#/*": ["src/*"],
+            "~/*": ["public/*"]
+        }
+    },
+    "include": ["src", "tests", "stories", ".storybook"],
+    "exclude": ["dist", "tests-results", "storybook-static"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+}
